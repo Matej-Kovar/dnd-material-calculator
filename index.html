@@ -14,60 +14,28 @@
     <header></header>
     <main id="main">
       <div class="summrary">
-        <div class="parameter parameter--main">
-          <p> <span class="parameter__name">Mana:</span> <span class="value value--number">0</span></p>
+        <div class='parameter--first parameter--tall cost'>
+      <div class="parameter parameter--gold">
+          <p> <span class="parameter__name">Cena:</span> <span class="value value--gold" id="gold">0 zl</span></p>
+      </div>
+      <div class="parameter parameter--silver">
+          <p><span class="value value--silver" id="silver">0 sl</span></p>
+      </div>
+      <div class="parameter parameter--bronze">
+          <p><span class="value value--bronze" id="bronze">0 md</span></p>
+      </div>
       </div>
         <div class="parameter parameter--main">
-          <p><span class="parameter__name">Suroviny:</span> <span class="value value--number">35</span></p>
+          <p><span class="parameter__name">Mana:</span> <span class="value value--number" id="manaSum">35</span></p>
       </div>
-      <div class="parameter parameter--wide parameter--long">
-        <p><span class="parameter__name">Base:</span> <span class="value">Sruroviny bla bla bla </span></p>
+        <div class="parameter parameter--main">
+          <p><span class="parameter__name">Suroviny:</span> <span class="value value--number" id="resSum">35</span></p>
+      </div>
+      <button class='button--reset' id="reset">Reset</button>
     </div>
       </div>
       <div id="recipes">
-        <div class="recipe">
-            <div class="recipe__header">
-                <h2 class="recipe__name">Bomba</h2>
-                <div class="parameter parameter--right parameter--tall">
-                    <p class="parameter__name name--large">Obor</p>
-                    <span class="value value--small">Základní</span>
-                </div>
-                <div class="parameter parameter--wide">
-                    <p class="value value--small value--color">železná koule s kusem zápalné šňůry</p>
-                </div>
-            </div>
-          <div class="recipe__body">
-            <div class="parameter parameter--first parameter--tall">
-                <p class="parameter__name name--large">Základ</p>
-                <span class="value">železná koule, zápalná šňůra</span>
-            </div>
-            <div class="parameter">
-                <p> <span class="parameter__name">Mana:</span> <span class="value value--number">0</span></p>
-            </div>
-              <div class="parameter">
-                <p><span class="parameter__name">Suroviny:</span> <span class="value value--number">35</span></p>
-            </div>
-              <div class="parameter">
-                <p><span class="parameter__name">Obtížnost:</span> <span class="value value--number">8</span></p>
-            </div>
-                <div class="parameter">
-                    <p><span class="parameter__name">Trvání:</span> <span class="value value--number">0</span></p>
-                </div>
-            </div>
-          <div class="recipe__sum">
-            <div class="parameter">
-                <p><span class="parameter__name">Celkem Many:</span> <span class="value value--number">0</span> </p>
-            </div>
-            <div class="parameter">
-                <p><span class="parameter__name">Celkeam Surovin:</span> <span class="value value--number">0</span> </p>
-            </div>
-          </div>
-          <div class="recipe__control">
-            <button class="control__button">+</button>
-            <span class="value value--number">0</span>
-            <button class="control__button">-</button>
-          </div>
-        </div>
+
       </div> 
     </main>
 </body>

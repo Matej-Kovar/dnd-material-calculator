@@ -6,7 +6,7 @@
   --hover: #669bbcff;
   --text-color: #161515;
   --number-color: #386641;
-  --string-color: #f6bd60;
+  --border: #ccc5b9;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -17,18 +17,21 @@
       --hover: #003049ff;
       --text-color: #FFFCF2;
       --number-color: #adc178;
+      --border: #57534d;
       
   }
 }
 
 body{
   background-color: var(--background);
+  margin: 0;
 }
 
 #recipes{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: 1em;
+  padding: 1em;
 }
 .recipe{
   background-color: var(--foreground);
@@ -83,9 +86,12 @@ h1, h2, h3, .parameter{
 }
 .value--number{
   color: var(--number-color);
+  font-family: 'Courier New', monospace;
   font-weight: 600;
 }
-
+.value--description{
+  padding-right: 1em;
+}
 .recipe__control{
   width: max-content;
   display: flex;
@@ -166,9 +172,20 @@ h1, h2, h3, .parameter{
   display: grid;
   padding: 1em;
   position: sticky;
-  border-radius: 0.5em;
-  grid-template-columns: auto auto;
-  gap: 1em;
+  top: 0;
+  z-index: 1;
+  border-bottom: var(--border) 2px solid;
+  grid-template-columns: max-content 1px max-content 1fr;
+  align-items:  center;
+  column-gap: 4em;
+}
+
+.summrary::before{
+  content: "";
+  background-color: var(--text-color);
+  height: calc(100% - 0.5em);
+  width: 1px;
+  grid-row: span 2;
 }
 .main{
   display: flex;
@@ -184,4 +201,79 @@ h1, h2, h3, .parameter{
 .parameter--long{
   font-size: 1.2em;
   font-weight: 500;
+}
+
+.value--gold{
+  color: gold;
+}
+.value--silver{
+  color: silver;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+.value--bronze{
+  color: chocolate;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.cost{
+  display: grid;
+  grid-template-columns: max-content max-content 1fr;
+  column-gap: 1em;
+}
+
+.parameter--gold{
+  grid-column: span 3;
+  font-weight: 700;
+  font-size: 2.5em;
+}
+
+.button--reset{
+  background-color: var(--primary);
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  grid-row: 1 / span 2;
+  grid-column-end: -1;
+  max-height: 64px;
+  font-size: 1.5em;
+  border-radius: 3em;
+  border: transparent 0 solid;
+  font-family: 'Barlow Condensed';
+  font-weight: 600;
+  justify-self: end;
+}
+
+.recipe--basic{
+  --primary: #fbf2c4;
+}
+
+.recipe--advanced{
+  --primary: #b8cdab;
+}
+
+.recipe--potions{
+  --primary: #e5c185;
+}
+
+.recipe--explosives{
+  --primary: #d68a58;
+}
+
+.recipe--magic-items{
+  --primary: #74a892;
+}
+
+.recipe--anatomy{
+  --primary: #c7522a;
+}
+
+.recipe--stars{
+  --primary: #008585;
+}
+
+.recipe--crystals{
+  --primary: #3a978c;
 }
